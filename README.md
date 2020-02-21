@@ -1,5 +1,5 @@
 # libft
-Library with some C functions 
+My very first library of some C programming language functions 
 
 ## Getting Started
 
@@ -57,11 +57,12 @@ Just include the library on your C projects
 
 ## Author
 
-* **[Pamela M. Nunes](https://github.com/pmartinsn)**
+* **[Pamela Martins Nunes](https://github.com/pmartinsn)**
 
 ## Linkedin
 
-* **[Pamela M. Nunes- ](https://www.linkedin.com/in/pamelaillisse/)**
+* **[Pamela Martins Nunes- ](https://www.linkedin.com/in/pamelaillisse/)**
+
 ##### Aditional information
 
 * [Man pages](https://www.die.net/) - Website where most of descripton was cut
