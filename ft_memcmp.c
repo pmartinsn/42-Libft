@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 11:59:07 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/27 12:22:06 by pmartins         ###   ########.fr       */
+/*   Created: 2020/01/23 15:44:06 by pmartins          #+#    #+#             */
+/*   Updated: 2020/02/13 11:31:23 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	int sinal;
-	int numero;
+	unsigned char		*ax1;
+	unsigned char		*ax2;
+	unsigned int		i;
 
+	ax1 = (unsigned char*)s1;
+	ax2 = (unsigned char*)s2;
 	i = 0;
-	sinal = 1;
-	numero = 0;
-	while ((str[i] == ' ' || str[i] == '\t') || (str[i] == '\n') \
-		|| (str[i] == '\v') || (str[i] == '\r') || (str[i] == '\f'))
+	if (n == 0)
+		return (0);
+	if (ax1[i] == '\0' && ax2[i] == '\0')
+		return (0);
+	while ((ax1[i] == ax2[i]) && n-- > 0)
 	{
 		i++;
+		if (n == 0)
+			return (0);
 	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sinal *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		numero = numero * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sinal * numero);
+	if (ax1[i] != ax2[i])
+		return (ax1[i] - ax2[i]);
+	return (0);
 }

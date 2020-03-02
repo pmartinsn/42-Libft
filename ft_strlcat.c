@@ -3,48 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmartins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 12:22:26 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/13 12:24:01 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:43:52 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-unsigned int	get_size(char *string)
+size_t	ft_strlcat(char *dst, const char *src, unsigned long int dstsize)
 {
-	unsigned int	size;
+	unsigned long int	i;
+	unsigned long int	j;
 
-	size = 0;
-	while (string[size] != '\0')
+	i = 0;
+	while (i < dstsize && dst[i])
 	{
-		size++;
-	}
-	return (size);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	source_size;
-	unsigned int	dest_size;
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	response;
-
-	source_size = get_size(src);
-	dest_size = get_size(dest);
-	i = dest_size;
-	j = 0;
-	while (size > 0 && src[j] != '\0' && i < size - 1)
-	{
-		dest[i] = src[j];
 		i++;
+	}
+	j = 0;
+	while (i + j + 1 < dstsize && src[j])
+	{
+		dst[i + j] = src[j];
 		j++;
 	}
-	dest[i] = '\0';
-	response = dest_size;
-	if (dest_size >= size)
-		response = size;
-	return (source_size + response);
+	if (i < dstsize)
+		dst[i + j] = 0;
+	return (i + ft_strlen((char*)src));
 }

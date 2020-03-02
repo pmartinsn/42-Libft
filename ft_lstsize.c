@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 11:59:07 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/27 12:22:06 by pmartins         ###   ########.fr       */
+/*   Created: 2020/02/28 14:27:56 by pmartins          #+#    #+#             */
+/*   Updated: 2020/02/28 14:27:58 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
-	int sinal;
-	int numero;
+	int	i;
 
 	i = 0;
-	sinal = 1;
-	numero = 0;
-	while ((str[i] == ' ' || str[i] == '\t') || (str[i] == '\n') \
-		|| (str[i] == '\v') || (str[i] == '\r') || (str[i] == '\f'))
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
+		lst = lst->next;
 		i++;
 	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sinal *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		numero = numero * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sinal * numero);
+	return (i + 1);
 }

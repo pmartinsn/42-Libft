@@ -6,7 +6,7 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 11:30:46 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/19 20:31:37 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/02/27 10:08:04 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static char			*negative_itoa(int nb, int len)
 	return (str);
 }
 
-char				*ft_check_itoa(char *str, int n, int len)
+static	char		*ft_check_itoa(char *str, int n, int len)
 {
 	len--;
 	while (n != '\0')
