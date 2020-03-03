@@ -6,26 +6,26 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:54:51 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/13 11:47:58 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:24:52 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char *ptr;
 	char d;
 
-	ptr = s;
+	ptr = b;
 	d = (unsigned char)c;
-	if ((!s) && (!c))
+	if ((!b) && (!c))
 		return (0);
-	while (n)
+	while (len)
 	{
 		*ptr = d;
 		ptr++;
-		n--;
+		len--;
 	}
-	return (s);
+	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 14:35:26 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/12 10:47:16 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/03 17:25:37 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	len;
 
 	i = 0;
-	len = ft_strlen((char*)s);
 	if (!s || !f)
 		return (NULL);
+	len = ft_strlen((char*)s);
 	if (!(post = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	post[len] = '\0';

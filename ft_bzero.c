@@ -6,7 +6,7 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 12:33:26 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/11 14:30:51 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/02 16:14:22 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ void	ft_bzero(void *s, size_t n)
 	char	*ptr;
 
 	ptr = (char*)s;
-	while (n > 0)
+	while (n--)
 	{
 		*(ptr) = '\0';
 		ptr++;
-		n--;
 	}
 }

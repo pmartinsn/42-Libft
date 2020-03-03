@@ -6,13 +6,13 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 11:59:07 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/27 12:22:06 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:05:48 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int i;
 	int sinal;

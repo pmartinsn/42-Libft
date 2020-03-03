@@ -6,13 +6,25 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 09:55:20 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/13 15:26:16 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/03 17:29:03 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+static size_t	nb_strlen(const char *str)
+{
+	int i;
+
+	i = 0;
+	if (!str)
+		return (i);
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	unsigned long int	i;
 
@@ -28,5 +40,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return (ft_strlen((char*)src));
+	return (nb_strlen(src));
 }

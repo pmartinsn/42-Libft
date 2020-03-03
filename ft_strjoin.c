@@ -6,7 +6,7 @@
 /*   By: pmartins <pmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 11:37:50 by pmartins          #+#    #+#             */
-/*   Updated: 2020/02/14 17:35:32 by pmartins         ###   ########.fr       */
+/*   Updated: 2020/03/02 12:45:27 by pmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		len;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen((char*)s1) + ft_strlen((char*)s2);
 	if (!(str = (char *)malloc(sizeof(*str) * (len + 1))))
 		return (NULL);
